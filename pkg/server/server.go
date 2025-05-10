@@ -29,6 +29,7 @@ import (
 	"github.com/xbapps/xbvr/pkg/models"
 	"github.com/xbapps/xbvr/pkg/session"
 	"github.com/xbapps/xbvr/pkg/tasks"
+	"github.com/xbapps/xbvr/svelteui"
 	"github.com/xbapps/xbvr/ui"
 )
 
@@ -128,6 +129,7 @@ func StartServer(version, commit, branch, date string) {
 	restful.Add(restfulspec.NewOpenAPIService(restConfig))
 
 	// Static files
+	authHandle("/svelteui/", common.IsUIAuthEnabled(), common.GetUISecret, http.FileServer(svelteui.GetFileSystem(common.EnvConfig.Debug)))
 	authHandle("/ui/", common.IsUIAuthEnabled(), common.GetUISecret, http.FileServer(ui.GetFileSystem(common.EnvConfig.Debug)))
 
 	// Imageproxy
