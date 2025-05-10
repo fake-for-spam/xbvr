@@ -1,5 +1,5 @@
 <script lang="ts">
     let { data } = $props()
+    let { state } = data
 </script>
-<h1>Svelte Test</h1>
-<pre class="pre">{JSON.stringify(data, null, 2)}</pre>
+<pre class="pre">{JSON.stringify(data.state, null, 2)}</pre>

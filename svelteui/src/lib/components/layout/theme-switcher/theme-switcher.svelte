@@ -29,17 +29,16 @@
             selected = value
         }
     }
-
 </script>
 
 <svelte:head>
   <script>
     const theme = localStorage.getItem('theme') || 'cerberus';
-    document.documentElement.setAttribute('data-theme', mode);
+    document.documentElement.setAttribute('data-theme', theme);
   </script>
 </svelte:head>
 
-<select class="select" value={selected} {onchange}>
+<select class="select capitalize" value={selected} {onchange}>
  {#each themes as theme }
     <option value={theme} class="capitalize">{theme}</option>
  {/each}

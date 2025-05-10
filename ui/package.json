@@ -1,0 +1,85 @@
+{
+  "name": "xbvr",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dev": "concurrently 'npm:dev:ui' 'npm:dev:go'",
+    "dev:go": "cd ../ && go generate && air",
+    "dev:ui": "vue-cli-service build --watch --silent"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.4",
+    "@fortawesome/fontawesome-svg-core": "1.2.36",
+    "@mdi/font": "7.4.47",
+    "buefy": "0.9.29",
+    "bulma-extensions": "6.2.7",
+    "date-fns": "4.1.0",
+    "ky": "0.30.0",
+    "pretty-bytes": "6.1.1",
+    "videojs-hotkeys": "0.2.30",
+    "videojs-vr": "1.8.0",
+    "vue": "2.7.16",
+    "vue-debounce": "4.0.1",
+    "vue-gallery": "2.0.5",
+    "vue-global-events": "1.2.1",
+    "vue-i18n": "8.28.2",
+    "vue-load-image": "0.2.0",
+    "vue-router": "3.6.5",
+    "vue-slider-component": "3.2.24",
+    "vue-star-rating": "1.7.0",
+    "vuex": "3.6.2",
+    "wampy": "6.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.26.0",
+    "@babel/eslint-parser": "7.26.5",
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-plugin-eslint": "5.0.8",
+    "@vue/cli-service": "5.0.8",
+    "@vue/eslint-config-standard": "8.0.1",
+    "buffer": "6.0.3",
+    "concurrently": "7.6.0",
+    "eslint": "9.18.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-n": "17.15.1",
+    "eslint-plugin-promise": "7.2.1",
+    "eslint-plugin-standard": "5.0.0",
+    "eslint-plugin-vue": "9.32.0",
+    "less": "4.2.1",
+    "less-loader": "12.2.0",
+    "sass": "1.83.4",
+    "sass-loader": "16.0.5",
+    "simple-progress-webpack-plugin": "2.0.0",
+    "vue-cli-plugin-i18n": "2.3.2",
+    "vue-i18n-extract": "2.0.7",
+    "vue-template-compiler": "2.7.16",
+    "webpack": "5.97.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/standard"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

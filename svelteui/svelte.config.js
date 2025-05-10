@@ -8,7 +8,8 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/svelteui'
+			base: '/svelteui',
+			relative: true
 		}
 	},
 };

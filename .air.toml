@@ -5,4 +5,4 @@ tmp_dir = 'dist'
 cmd = 'go build -o dist/xbvr -tags="json1" main.go'
 full_bin = 'DEBUG=1 ./dist/xbvr'
 include_ext = ['go']
-exclude_dir = ['node_modules', 'cache', 'dist', 'ui', 'tmp']
+exclude_dir = ['node_modules', 'cache', 'dist', 'ui', 'svelteui', 'tmp']

@@ -15,3 +15,6 @@ yarn-error.log
 
 .release-env
 .docker-creds
+
+svelte-ui/node_modules
+svelte-ui/build
