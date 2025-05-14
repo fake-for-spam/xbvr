@@ -1,5 +1,6 @@
 import { previewConfig, type PreviewConfig } from "./options/previews";
 import { stateResponseSchema } from "./options/state";
+import { type AddFolder, addFolderSchema } from "./schema";
 
 export class XbvrApiClient {
     constructor(protected fetch: typeof globalThis.fetch = globalThis.fetch) {}
@@ -42,6 +43,17 @@ export class XbvrApiClient {
 
     startGeneratingPreviews() {
         return this.fetch('/api/task/preview/generate')
+    }
+
+    addStorageFolder(form: AddFolder) {
+        const data = addFolderSchema.parse(form)
+        return this.fetch('/api/options/storage', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
     }
 }
 
