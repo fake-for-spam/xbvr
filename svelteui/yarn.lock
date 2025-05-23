@@ -276,6 +276,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
+"@internationalized/date@^3.8.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.8.1.tgz#fb3709440060a9efa0722615e83550e682e83221"
+  integrity sha512-PgVE6B6eIZtzf9Gu5HvJxRK3ufUFz9DhspELuhW/N0GuMGMTLvPQNRkHP2hTuP9lblOk+f+1xi96sPiPXANXAA==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
 "@isaacs/fs-minipass@^4.0.0":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@isaacs/fs-minipass/-/fs-minipass-4.0.1.tgz#2d59ae3ab4b38fb4270bfa23d30f8e2e86c7fe32"
@@ -539,6 +546,13 @@
     kleur "^4.1.5"
     magic-string "^0.30.15"
     vitefu "^1.0.4"
+
+"@swc/helpers@^0.5.0":
+  version "0.5.17"
+  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.17.tgz#5a7be95ac0f0bf186e7e6e890e7a6f6cda6ce971"
+  integrity sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==
+  dependencies:
+    tslib "^2.8.0"
 
 "@tailwindcss/forms@^0.5.9":
   version "0.5.10"
@@ -2036,6 +2050,11 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lucide-svelte@^0.511.0:
+  version "0.511.0"
+  resolved "https://registry.yarnpkg.com/lucide-svelte/-/lucide-svelte-0.511.0.tgz#7eda939aed731e711afd4166f8ee7391ec749814"
+  integrity sha512-cSBj1UPKt1EXnj3VBUidBqwHyFQ83pLYiTaQ/67Q5thnaP9IPohL2UXjqEzgSXXklYPYQKaAv+kmVdliDWFjWQ==
 
 magic-string@^0.30.11, magic-string@^0.30.15, magic-string@^0.30.17, magic-string@^0.30.5:
   version "0.30.17"

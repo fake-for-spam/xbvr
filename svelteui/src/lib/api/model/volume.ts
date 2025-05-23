@@ -7,5 +7,8 @@ export const volumeSchema = z.object({
     metadata: z.string(),
     last_scan: z.string().datetime(),
     is_available: z.boolean(),
+    file_count: z.number(),
+    unmatched_count: z.number(),
+    total_size: z.number(),
 })
 export type Volume = z.infer<typeof volumeSchema>

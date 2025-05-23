@@ -21,8 +21,13 @@ export class XbvrApiClient {
         if (!response.ok) {
             throw new Error(`Failed to fetch: ${response.statusText}`);
         }
-        const json = await response.json();
-        return json;
+        const contentType = response.headers.get('Content-Type')
+        if (contentType === 'application/json') {
+            const data = await response.json();
+            return data;
+        }
+        const text = await response.text();
+        return text;
     }
     private async get(url: string) {
         return this.request('GET', url);
@@ -73,6 +78,16 @@ export class XbvrApiClient {
     async getStorageOptions() {
         const data = await this.get('/api/options/storage');
         return getStorageResponse.parse(data);
+    }
+
+    rescanAllFolders() {
+        return this.get('/api/task/rescan');
+    }
+    rescanFolder(id: number | string) {
+        return this.get(`/api/task/rescan/${id}`);
+    }
+    removeFolder(id: number | string) {
+        return this.delete(`/api/options/storage/${id}`);
     }
 }
 

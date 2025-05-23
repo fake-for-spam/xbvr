@@ -1,13 +1,14 @@
 <script lang="ts">
   import AddCloudStorage from "./add-cloud-storage.svelte";
   import AddLocalFolderForm from "./add-local-folder-form.svelte";
+  import StorageFolders from "./storage-folders.svelte";
   import StorageOptionsForm from "./storage-options-form.svelte";
 
   let { data } = $props();
-  let { storageOptions } = data;
+  let { storageOptions } = $derived(data);
     
 </script>
-<h3 class="h3">Storage</h3>
+<StorageFolders volumes={storageOptions.volumes} />
 <hr class="hr" />
 <div class="grid grid-cols-2 gap-4">
     <div>
