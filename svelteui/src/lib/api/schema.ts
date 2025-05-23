@@ -13,3 +13,8 @@ export const addFolderSchema = z.discriminatedUnion('type', [
     addRemoteFolderSchema,
 ]);
 export type AddFolder = z.infer<typeof addFolderSchema>;
+
+export const storageOptionsSchema = z.object({
+    match_ohash: z.boolean()
+})
+export type StorageOptions = z.infer<typeof storageOptionsSchema>

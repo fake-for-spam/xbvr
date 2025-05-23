@@ -1,7 +1,10 @@
 <script lang="ts">
   import AddCloudStorage from "./add-cloud-storage.svelte";
   import AddLocalFolderForm from "./add-local-folder-form.svelte";
+  import StorageOptionsForm from "./storage-options-form.svelte";
 
+  let { data } = $props();
+  let { storageOptions } = data;
     
 </script>
 <h3 class="h3">Storage</h3>
@@ -15,4 +18,9 @@
         <h4 class="h4">Add cloud storage</h4>
         <AddCloudStorage />
     </div>
+</div>
+<hr class="hr" />
+<div>
+    <h4 class="h4">Options</h4>
+    <StorageOptionsForm form={storageOptions} />
 </div>
