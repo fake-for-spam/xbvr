@@ -1,4 +1,5 @@
 import { previewConfig, type PreviewConfig } from "./options/previews";
+import { searchState } from "./options/searchState";
 import { stateResponseSchema } from "./options/state";
 import { getStorageResponse } from "./options/storage";
 import { type AddFolder, addFolderSchema, type StorageOptions, storageOptionsSchema } from "./schema";
@@ -41,9 +42,15 @@ export class XbvrApiClient {
     private async delete(url: string) {
         return this.request('DELETE', url);
     }
+
     async getState() {
         const response = await this.get('/api/options/state');
         return stateResponseSchema.parse(response);
+    }
+
+    async getSearchState() {
+        const response = await this.get('/api/options/state/search');
+        return searchState.parse(response);
     }
 
     async getPreviewConfig(): Promise<PreviewConfig> {
@@ -88,6 +95,15 @@ export class XbvrApiClient {
     }
     removeFolder(id: number | string) {
         return this.delete(`/api/options/storage/${id}`);
+    }
+    resetCache(kind: 'images' | 'previews' | 'searchIndex') {
+        return this.delete(`/api/options/cache/reset/${kind}`);
+    }
+    rescanSearchIndex() {
+        return this.get('/api/task/index');
+    }
+    refreshScenes() {
+        return this.get('/api/task/scene-refresh');
     }
 }
 
